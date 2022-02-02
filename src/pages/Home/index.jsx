@@ -1,10 +1,12 @@
 import {FiLink} from 'react-icons/fi'
+import Menu from '../../components/menu/index'
 import './home.css'
 
 
 export default function Home(){
-    return(
-      <div className="container-Home">
+  return(
+    <div className="container-Home">
+        <Menu/>
 
           <div className="logo">
               <img src="/logo.png" alt="Sujeito link logo"/>
@@ -20,6 +22,8 @@ export default function Home(){
 
             <button> Gerar Link </button>
           </div>
+
+
       </div>
     )
   }
