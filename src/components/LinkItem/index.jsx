@@ -8,7 +8,6 @@ export default function LinkItem({closeModal, content}){
       await navigator.clipboard.writeText(content.link)
       alert("URL copiada com sucesso.")
     }
-
     return (
       <div className="modal-container">
           
