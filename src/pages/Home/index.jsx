@@ -7,9 +7,12 @@ import LinkItem from '../../components/LinkItem'
 
 export default function Home(){
   const [link, setLink] = useState('');
+  const [showModal , setShowModal] = useState(false);
+
+
 
   function handleShortLink(){
-    alert(`meu link ${link}`)
+    setShowModal(true)
   }
 
   return(
@@ -35,7 +38,12 @@ export default function Home(){
             <button onClick={handleShortLink}> Gerar Link </button>
           </div>
 
-          <LinkItem/>
+          {/*condicional, se showModal for "false" o elemento nao será renderizado */}
+          {showModal && (
+            <LinkItem
+            closeModal={()=>setShowModal(false)}
+            />
+          )}
 
       </div>
     )
