@@ -3,6 +3,7 @@ import {FiLink} from 'react-icons/fi'
 import Menu from '../../components/menu/index'
 import './home.css'
 import LinkItem from '../../components/LinkItem'
+import api from '../../Services/api'
 
 
 export default function Home(){
@@ -11,8 +12,15 @@ export default function Home(){
 
 
 
-  function handleShortLink(){
-    setShowModal(true)
+  async function handleShortLink(){
+    try{
+      const response = await api.post('/shorten' , {long_url:link});
+      console.log(response);
+      alert("deu certo")
+    }catch{
+      alert(" Ops. \n Parece que algo deu errado. \n Tente novamente.")
+      setLink('')
+    }
   }
 
   return(
