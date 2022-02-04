@@ -1,8 +1,18 @@
+
+import {useState, useEffect} from 'react'
 import './links.css'
 import {FiArrowLeft, FiLink, FiTrash} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
+import {getLinkSave} from '../../Services/storeLinks'
+
 
 export default function Links(){
+
+  useEffect (()=>{
+    
+  })
+
+
     return(
       <div className="links-container">
 
@@ -23,15 +33,6 @@ export default function Links(){
           </button>
         </div>
 
-        <div className="links-item">
-          <button className="link">
-            <FiLink   size={18} color="#FFF"/>
-            https://google.com
-          </button>
-          <button className="link-delete">
-            <FiTrash size={24} color="#FF5454" />
-          </button>
-        </div>
 
       </div>
     )
