@@ -31,3 +31,15 @@ export async function saveLink(key, newLink){
 
 //Deletar um link salvos
 
+export function deleteLink(links, id){
+
+    let myLinks = links.filter( item => {
+         return (item.id !== id)
+    }) 
+
+    localStorage.setItem('@encurtaLink' , JSON.stringify(myLinks));
+    console.log('link deleatado')
+
+    return myLinks;
+
+}
